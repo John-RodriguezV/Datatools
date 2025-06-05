@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: springboot-app
-    env: java
-    buildCommand: ./mvnw clean install
-    startCommand: java -jar target/reporte-jasper-postgres-soloconpython-1.0.0.jar
-    plan: free
-    branch: main
