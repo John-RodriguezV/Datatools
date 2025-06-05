@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lista de Clientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Navbar con ícono centrado -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container justify-content-center">
+            <a class="text-white fs-1 text-decoration-none" href="/">
+                <i class="bi bi-house-fill"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container flex-grow-1">
+        <h2 class="mb-4">Lista de Clientes</h2>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo Documento</th>
+                        <th>Número Documento</th>
+                        <th>Usuario Dominio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cliente : ${clientes}">
+                        <td th:text="${cliente.id}"></td>
+                        <td th:text="${cliente.tipoDocumento}"></td>
+                        <td th:text="${cliente.numeroDocumento}"></td>
+                        <td th:text="${cliente.usuarioDominio}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer pegado abajo -->
+    <th:block th:replace="~{fragments/static-source :: footer}"></th:block>
+
+</body>
+</html>

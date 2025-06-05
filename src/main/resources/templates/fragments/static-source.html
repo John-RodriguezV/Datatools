@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head></head>
+  <body>
+    <!-- HEADER FRAGMENT -->
+    <div th:fragment="header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container-fluid justify-content-center">
+          <h1 class="text-center text-white fs-1 m-0 w-100">Sistema de Reportes y Conversión</h1>
+        </div>
+      </nav>
+    </div>
+
+    <!-- FOOTER FRAGMENT -->
+    <div th:fragment="footer">
+      <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+          &copy; [[${#dates.format(#dates.createNow(), 'yyyy')}]] Reportes Jasper - Todos los derechos reservados
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
